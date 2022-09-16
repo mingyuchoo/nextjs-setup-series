@@ -1,9 +1,14 @@
 import { User } from '@/types/user';
 
-/** Dummy user data. */
-export const sampleUserData: User[] = [
-  { id: 101, name: 'Alice' },
-  { id: 102, name: 'Bob' },
-  { id: 103, name: 'Caroline' },
-  { id: 104, name: 'Dave' },
-];
+export const sampleUserData = new Promise<Array<User>>((resolve) =>
+  setTimeout(
+    () =>
+      resolve([
+        { id: 101, name: 'Alice' },
+        { id: 102, name: 'Bob' },
+        { id: 103, name: 'Caroline' },
+        { id: 104, name: 'Dave' },
+      ]),
+    1500
+  )
+);

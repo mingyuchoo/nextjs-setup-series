@@ -4,7 +4,7 @@ import ListItem from '@/components/ListItem';
 import { User } from '@/types/user';
 
 type Props = {
-  items: User[];
+  items: Array<User>;
 };
 
 const List = ({ items }: Props) => (

@@ -20,7 +20,7 @@ export default function Layout({ children, title }: LayoutProps) {
       <main>{children}</main>
       <footer>
         <hr />
-        <span>I'm here to stay (Footer)</span>
+        <span>I&apos;m here to stay (Footer)</span>
       </footer>
     </>
   );
