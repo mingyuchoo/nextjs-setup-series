@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import type { ReactNode } from 'react';
+
+import Navbar from '@/components/Navbar';
 
 type LayoutProps = {
   children?: ReactNode;
@@ -14,22 +15,9 @@ export default function Layout({ children, title }: LayoutProps) {
         <title>{title}</title>
       </Head>
       <header>
-        <nav>
-          <Link href="/">
-            <a>Home</a>
-          </Link>{' '}
-          |{' '}
-          <Link href="/about">
-            <a>About</a>
-          </Link>{' '}
-          |{' '}
-          <Link href="/users">
-            <a>Users List</a>
-          </Link>{' '}
-          | <a href="/api/users">Users API</a>
-        </nav>
+        <Navbar />
       </header>
-      {children}
+      <main>{children}</main>
       <footer>
         <hr />
         <span>I'm here to stay (Footer)</span>
