@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const id = params?.id;
     const item = (await sampleUserData).find((data) => data.id === Number(id));
     return { props: { item } };
-  } catch (err: unknown) {
+  } catch (err: any) {
     return { props: { errors: err.message } };
   }
 };

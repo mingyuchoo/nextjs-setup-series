@@ -1,15 +1,8 @@
-import Link from 'next/link';
-
 import Layout from '@/components/Layout';
 
 const Index = () => (
-  <Layout title="Home | Next.js + TypeScript">
+  <Layout title="Index | Next.js + TypeScript">
     <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
   </Layout>
 );
 
