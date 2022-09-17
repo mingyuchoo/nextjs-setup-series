@@ -6,6 +6,11 @@ import List from '@/components/List';
 import { User } from '@/types/user';
 import { sampleUserData } from '@/utils/sample-data';
 
+export const getStaticProps: GetStaticProps = async () => {
+  const items: Array<User> = await sampleUserData;
+  return { props: { items } };
+};
+
 type Props = {
   items: Array<User>;
 };
@@ -25,10 +30,5 @@ const WithStaticProps = ({ items }: Props) => (
     </p>
   </Layout>
 );
-
-export const getStaticProps: GetStaticProps = async () => {
-  const items: Array<User> = await sampleUserData;
-  return { props: { items } };
-};
 
 export default WithStaticProps;

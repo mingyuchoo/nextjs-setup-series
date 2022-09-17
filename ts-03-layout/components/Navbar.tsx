@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav>
       <Link href="/">
@@ -17,4 +17,6 @@ export default function Navbar() {
       |<Link href="/api/users">Users API</Link>
     </nav>
   );
-}
+};
+
+export default Navbar;

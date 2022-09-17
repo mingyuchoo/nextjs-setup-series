@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
     <nav>
       <input placeholder="Search..." />
@@ -15,4 +15,6 @@ export default function Sidebar() {
       </Link>
     </nav>
   );
-}
+};
+
+export default Sidebar;

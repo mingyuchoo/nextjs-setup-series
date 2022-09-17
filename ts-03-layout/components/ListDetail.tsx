@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { User } from '@/types/user';
 
 type ListDetailProps = {

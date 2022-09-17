@@ -5,6 +5,24 @@ import ListDetail from '@/components/ListDetail';
 import { User } from '@/types/user';
 import { sampleUserData } from '@/utils/sample-data';
 
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    const id = params?.id;
+    const item = (await sampleUserData).find((data) => data.id === Number(id));
+    return { props: { item } };
+  } catch (err: unknown) {
+    return { props: { errors: err.message } };
+  }
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = (await sampleUserData).map((user: User) => ({
+    params: { id: user.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+};
+
 type Props = {
   item?: User;
   errors?: string;
@@ -29,21 +47,3 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
 };
 
 export default StaticPropsDetail;
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = (await sampleUserData).map((user: User) => ({
-    params: { id: user.id.toString() },
-  }));
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const id = params?.id;
-    const item = (await sampleUserData).find((data) => data.id === Number(id));
-    return { props: { item } };
-  } catch (err: unknown) {
-    return { props: { errors: err.message } };
-  }
-};

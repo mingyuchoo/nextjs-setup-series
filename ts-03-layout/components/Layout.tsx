@@ -1,27 +1,27 @@
 import Head from 'next/head';
 import type { ReactNode } from 'react';
 
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import Navbar from '@/components/Navbar';
 
 type LayoutProps = {
-  children?: ReactNode;
   title?: string;
+  children?: ReactNode;
 };
 
-export default function Layout({ children, title }: LayoutProps) {
+const Layout = ({ title, children }: LayoutProps) => {
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <header>
-        <Navbar />
-      </header>
+      <Header />
+      <Navbar />
       <main>{children}</main>
-      <footer>
-        <hr />
-        <span>I&apos;m here to stay (Footer)</span>
-      </footer>
+      <Footer />
     </>
   );
-}
+};
+
+export default Layout;
