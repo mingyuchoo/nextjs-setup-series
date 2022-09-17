@@ -30,5 +30,5 @@ export default UsersIndex;
 export const getStaticProps: GetStaticProps = async () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const users: Array<User> = await fetch('http://localhost:3000/api/users').then((res) => res.json());
-  return { props: { users } };
+  return { props: { users }, revalidate: 10 };
 };

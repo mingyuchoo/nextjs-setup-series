@@ -1,5 +1,19 @@
-import Layout from '@/components/Layout';
+import useSWR from 'swr';
 
-const CSR = () => <Layout title="CSR | Next.js + TypeScript">This is CSR Page</Layout>;
+import Layout from '@/components/Layout';
+import ListDetail from '@/components/ListDetail';
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
+const CSR = () => {
+  const { data, error } = useSWR('https://jsonplaceholder.typicode.com/users/1', fetcher);
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
+  return (
+    <Layout title="CSR | Next.js + TypeScript">
+      <ListDetail item={data} />
+    </Layout>
+  );
+};
 
 export default CSR;
