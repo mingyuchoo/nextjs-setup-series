@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import type { ReactNode } from 'react';
 
+import Aside from '@/components/Aside';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Navbar from '@/components/Navbar';
@@ -18,6 +19,7 @@ const Layout = ({ title, children }: LayoutProps) => {
       </Head>
       <Header />
       <Navbar />
+      <Aside />
       <main>{children}</main>
       <Footer />
     </>

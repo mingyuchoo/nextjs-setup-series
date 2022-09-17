@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Aside = () => {
   return (
-    <nav>
+    <aside>
       <input placeholder="Search..." />
       <Link href="/">
         <a>Home</a>
@@ -13,7 +13,7 @@ const Aside = () => {
       <Link href="/contact">
         <a>Contact</a>
       </Link>
-    </nav>
+    </aside>
   );
 };
 
