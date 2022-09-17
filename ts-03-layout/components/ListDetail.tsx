@@ -10,7 +10,7 @@ const ListDetail = ({ item: user }: ListDetailProps) => (
       <h1>Detail for {user.name}</h1>
     </summary>
     <details>
-      <p>ID: {user.id}</p>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
     </details>
   </article>
 );

@@ -235,6 +235,6 @@ export const sampleUserData = new Promise<Array<User>>((resolve) =>
           },
         },
       ]),
-    1500
+    50
   )
 );

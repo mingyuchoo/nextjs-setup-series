@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 
 import Layout from '@/components/Layout';
 import ListDetail from '@/components/ListDetail';
@@ -17,6 +18,9 @@ const UserId = ({ item, errors }: Props) => {
         <p>
           <span style={{ color: 'red' }}>Error:</span> {errors}
         </p>
+        <Link href="/users">
+          <a>Go List</a>
+        </Link>
       </Layout>
     );
   }
@@ -24,6 +28,9 @@ const UserId = ({ item, errors }: Props) => {
   return (
     <Layout title={`${item ? item.name : 'User Detail'} | Next.js + TypeScript`}>
       {item && <ListDetail item={item} />}
+      <Link href="/users">
+        <a>Go List</a>
+      </Link>
     </Layout>
   );
 };
