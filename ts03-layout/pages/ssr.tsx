@@ -16,7 +16,7 @@ const SSR = ({ user }: SSRProps) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ _req, res }) => {
-  const data = await fetch('https://jsonplaceholder.typicode.com/users/4');
+  const data = await fetch('http://localhost:3000/api/users/4');
   const user = (await data.json()) as User;
 
   res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');

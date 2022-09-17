@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Layout from '@/components/Layout';
 import ListDetail from '@/components/ListDetail';
 import { User } from '@/types/user';
-import { sampleUserData } from '@/utils/sample-data';
 
 type Props = {
   item?: User;
@@ -39,8 +38,10 @@ export default UserId;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const users: Array<User> = await fetch('http://localhost:3000/api/users').then((res) => res.json());
     const id = params?.id;
-    const item = (await sampleUserData).find((data) => data.id === Number(id));
+    const item = users.find((data) => data.id === Number(id));
     return { props: { item } };
   } catch (err: any) {
     return { props: { errors: err.message } };
@@ -48,7 +49,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = (await sampleUserData).map((user: User) => ({
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const users: Array<User> = await fetch('http://localhost:3000/api/users').then((res) => res.json());
+  const paths = users.map((user: User) => ({
     params: { id: user.id.toString() },
   }));
 

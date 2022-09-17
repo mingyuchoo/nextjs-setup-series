@@ -16,7 +16,7 @@ const SSG = ({ user }: SSGProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/2');
+  const res = await fetch('http://localhost:3000/api/users/2');
   const user = (await res.json()) as User;
   return {
     props: {

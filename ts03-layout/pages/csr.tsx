@@ -6,7 +6,7 @@ import ListDetail from '@/components/ListDetail';
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const CSR = () => {
-  const { data, error } = useSWR('https://jsonplaceholder.typicode.com/users/1', fetcher);
+  const { data, error } = useSWR('http://localhost:3000/api/users/1', fetcher);
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
   return (

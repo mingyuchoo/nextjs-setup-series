@@ -16,7 +16,7 @@ const ISR = ({ user }: ISRProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users/3');
+  const res = await fetch('http://localhost:3000/api/users/3');
   const user = (await res.json()) as User;
   return {
     props: {
