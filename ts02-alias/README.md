@@ -1,4 +1,4 @@
-# ts-02-alias
+# ts02-alias
 
 ## How to use `module-path-aliases`
 
