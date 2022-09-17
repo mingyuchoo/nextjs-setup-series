@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { sampleUserData } from '@/utils/sample-data';
 
-export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
+const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (!Array.isArray(await sampleUserData)) {
       throw new Error('Cannot find user data');
@@ -11,4 +11,6 @@ export default async function handler(_req: NextApiRequest, res: NextApiResponse
   } catch (err: unknown) {
     res.status(500).json({ statusCode: 500, message: err.message });
   }
-}
+};
+
+export default handler;
