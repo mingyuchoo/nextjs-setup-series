@@ -1,11 +1,11 @@
 import ListItem from '@/components/ListItem';
 import { User } from '@/types/user';
 
-type Props = {
+type ListProps = {
   items: Array<User>;
 };
 
-const List = ({ items }: Props) => (
+const List = ({ items }: ListProps) => (
   <ul>
     {items.map((item) => (
       <li key={item.id}>
