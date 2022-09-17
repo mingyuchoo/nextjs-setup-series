@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "css": "tailwindcss -i ./styles/globals.css -o ./public/globals.css",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix ."
@@ -30,6 +31,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-simple-import-sort": "8.0.0",
     "prettier": "2.7.1",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.3"
   }
 }

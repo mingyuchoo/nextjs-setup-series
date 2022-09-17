@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 
 import Layout from '@/components/Layout';
 import ListDetail from '@/components/ListDetail';

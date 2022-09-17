@@ -15,12 +15,9 @@ const SSR = ({ user }: SSRProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ _req, res }) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data = await fetch('http://localhost:3000/api/users/4');
   const user = (await data.json()) as User;
-
-  res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59');
-
   return {
     props: {
       user,
