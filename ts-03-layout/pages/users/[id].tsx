@@ -5,6 +5,31 @@ import ListDetail from '@/components/ListDetail';
 import { User } from '@/types/user';
 import { sampleUserData } from '@/utils/sample-data';
 
+type Props = {
+  item?: User;
+  errors?: string;
+};
+
+const UserId = ({ item, errors }: Props) => {
+  if (errors) {
+    return (
+      <Layout title="Error | Next.js + TypeScript">
+        <p>
+          <span style={{ color: 'red' }}>Error:</span> {errors}
+        </p>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout title={`${item ? item.name : 'User Detail'} | Next.js + TypeScript`}>
+      {item && <ListDetail item={item} />}
+    </Layout>
+  );
+};
+
+export default UserId;
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id;
@@ -22,28 +47,3 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return { paths, fallback: false };
 };
-
-type Props = {
-  item?: User;
-  errors?: string;
-};
-
-const StaticPropsDetail = ({ item, errors }: Props) => {
-  if (errors) {
-    return (
-      <Layout title="Error | Next.js + TypeScript Example">
-        <p>
-          <span style={{ color: 'red' }}>Error:</span> {errors}
-        </p>
-      </Layout>
-    );
-  }
-
-  return (
-    <Layout title={`${item ? item.name : 'User Detail'} | Next.js + TypeScript Example`}>
-      {item && <ListDetail item={item} />}
-    </Layout>
-  );
-};
-
-export default StaticPropsDetail;
