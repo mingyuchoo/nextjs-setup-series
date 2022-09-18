@@ -1,6 +1,8 @@
-import { User } from '@/types/user';
+import { User, XUser } from '@/types/user';
 
-export const sampleUserData = new Promise<Array<User>>((resolve) =>
+export const hasuraUserData = new Promise<Array<User>>((resolve) => setTimeout(() => resolve([]), 50));
+
+export const sampleUserData = new Promise<Array<XUser>>((resolve) =>
   setTimeout(
     () =>
       resolve([

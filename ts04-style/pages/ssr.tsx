@@ -16,7 +16,8 @@ const SSR = <T extends User>({ user }: SSRProps<T>) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async <T extends User>() => {
-  const data = await fetch('http://localhost:3000/api/users/4');
+  const id = '05c13117-bdae-4aa0-a47c-c97aac1ab7e0';
+  const data = await fetch(`http://localhost:3000/api/users/${id}`);
   const user = (await data.json()) as T;
   return {
     props: {

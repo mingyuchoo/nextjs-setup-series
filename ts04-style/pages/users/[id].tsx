@@ -37,7 +37,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const users: Array<User> = await fetch('http://localhost:3000/api/users').then((res) => res.json());
     const id = params?.id;
-    const item = users.find((data) => data.id === Number(id));
+    // const item = users.find((data) => data.id === Number(id));
+    const item = users.find((data) => data.id === id);
     return { props: { item } };
   } catch (err: any) {
     return { props: { errors: err.message } };
