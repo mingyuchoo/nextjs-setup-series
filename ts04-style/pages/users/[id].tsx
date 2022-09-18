@@ -5,21 +5,19 @@ import Layout from '@/components/Layout';
 import ListDetail from '@/components/ListDetail';
 import { User } from '@/types/user';
 
-type Props = {
-  item?: User;
+type Props<T extends User> = {
+  item?: T;
   errors?: string;
 };
 
-const UserId = ({ item, errors }: Props) => {
+const UserId = <T extends User>({ item, errors }: Props<T>) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript">
         <p>
           <span style={{ color: 'red' }}>Error:</span> {errors}
         </p>
-        <Link href="/users">
-          <a>Go List</a>
-        </Link>
+        <Link href="/users">Go List</Link>
       </Layout>
     );
   }
@@ -27,9 +25,7 @@ const UserId = ({ item, errors }: Props) => {
   return (
     <Layout title={`${item ? item.name : 'User Detail'} | Next.js + TypeScript`}>
       {item && <ListDetail item={item} />}
-      <Link href="/users">
-        <a>Go List</a>
-      </Link>
+      <Link href="/users">Go List</Link>
     </Layout>
   );
 };

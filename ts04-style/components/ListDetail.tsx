@@ -1,18 +1,18 @@
 import { User } from '@/types/user';
 
-type ListDetailProps = {
-  item: User;
+type ListDetailProps<T extends User> = {
+  item: T;
 };
 
-const ListDetail = ({ item: user }: ListDetailProps) => (
-  <article>
-    <summary>
-      <h1>Detail for {user.name}</h1>
-    </summary>
-    <details>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-    </details>
-  </article>
+const ListDetail = <T extends User>({ item }: ListDetailProps<T>) => (
+  <>
+    <div>
+      <h1>Detail for {item.name}</h1>
+    </div>
+    <div>
+      <pre>{JSON.stringify(item, null, 2)}</pre>
+    </div>
+  </>
 );
 
 export default ListDetail;

@@ -4,10 +4,10 @@ import Layout from '@/components/Layout';
 import ListDetail from '@/components/ListDetail';
 import { User } from '@/types/user';
 
-type SSGProps = {
-  user: User;
+type SSGProps<T extends User> = {
+  user: T;
 };
-const SSG = ({ user }: SSGProps) => {
+const SSG = <T extends User>({ user }: SSGProps<T>) => {
   return (
     <Layout title="SSG | Next.js + TypeScript">
       <ListDetail item={user} />
@@ -15,9 +15,9 @@ const SSG = ({ user }: SSGProps) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async <T extends User>() => {
   const res = await fetch('http://localhost:3000/api/users/2');
-  const user = (await res.json()) as User;
+  const user = (await res.json()) as T;
   return {
     props: {
       user,

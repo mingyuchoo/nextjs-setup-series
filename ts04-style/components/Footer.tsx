@@ -1,9 +1,7 @@
-const Footer = () => {
-  return (
-    <footer>
-      <span>This is footer</span>
-    </footer>
-  );
-};
+const Footer = () => (
+  <>
+    <span>This is footer</span>
+  </>
+);
 
 export default Footer;

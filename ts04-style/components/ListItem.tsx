@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 import { User } from '@/types/user';
 
-type ListItemProps = {
-  data: User;
+type ListItemProps<T extends User> = {
+  item: T;
 };
 
-const ListItem = ({ data }: ListItemProps) => (
-  <Link href="/users/[id]" as={`/users/${data.id}`}>
+const ListItem = <T extends User>({ item }: ListItemProps<T>) => (
+  <Link href="/users/[id]" as={`/users/${item.id}`}>
     <a>
-      {data.id}: {data.name}
+      {item.id}: {item.name}
     </a>
   </Link>
 );

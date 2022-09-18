@@ -1,11 +1,6 @@
 body {
-  background-color: whitesmoke;
-  color: darkslategrey;
   font-family: Verdana, Tahoma, sans-serif;
   font-weight: bold;
-  border: 1px dashed red;
-  margin: auto;
-  padding: auto;
 }
 
 header,
@@ -14,9 +9,8 @@ aside,
 footer,
 section,
 article,
-nav,
-summary,
-details {
+nav
+{
   border: 1px dashed red;
   margin: 5px;
   padding: 5px;
@@ -50,6 +44,6 @@ a:active {
 
 ul {
   list-style-type: none;
-  margin: auto;
-  padding: auto;
+  margin: 0%;
+  padding: 0%;
 }

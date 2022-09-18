@@ -1,25 +1,27 @@
 import ListItem from '@/components/ListItem';
 import { User } from '@/types/user';
 
-type ListProps = {
-  items: Array<User>;
+type ListProps<T extends User> = {
+  items: Array<T>;
 };
 
-const List = ({ items }: ListProps) => (
-  <section>
-    <summary>
-      <h1>List</h1>
-    </summary>
-    <details>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            <ListItem data={item} />
-          </li>
-        ))}
-      </ul>
-    </details>
-  </section>
-);
+const List = <T extends User>({ items }: ListProps<T>) => {
+  return (
+    <>
+      <div>
+        <h1>List</h1>
+      </div>
+      <div>
+        <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              <ListItem item={item} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+};
 
 export default List;

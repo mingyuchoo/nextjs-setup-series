@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import type { ReactNode } from 'react';
 
-import Aside from '@/components/Aside';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import Navbar from '@/components/Navbar';
 
 type LayoutProps = {
@@ -17,11 +15,16 @@ const Layout = ({ title, children }: LayoutProps) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Header />
-      <Navbar />
-      <Aside />
+      <header>
+        <nav>
+          <Navbar />
+        </nav>
+      </header>
+      <aside></aside>
       <main>{children}</main>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

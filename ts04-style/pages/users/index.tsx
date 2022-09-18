@@ -5,22 +5,19 @@ import Layout from '@/components/Layout';
 import List from '@/components/List';
 import { User } from '@/types/user';
 
-type Props = {
-  users: Array<User>;
+type Props<T extends User> = {
+  users: Array<T>;
 };
 
-const UsersIndex = ({ users }: Props) => (
+const UsersIndex = <T extends User>({ users }: Props<T>) => (
   <Layout title="UsersIndex List | Next.js + TypeScript">
-    <h1>UsersIndex List</h1>
+    <h1>UsersIndex</h1>
     <p>
       Example fetching data from inside <code>getStaticProps()</code>.
     </p>
-    <p>You are currently on: /users</p>
     <List items={users} />
     <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
+      <Link href="/">Go home</Link>
     </p>
   </Layout>
 );
