@@ -1,0 +1,55 @@
+body {
+  background-color: whitesmoke;
+  color: darkslategrey;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  border: 1px dashed red;
+  margin: auto;
+  padding: auto;
+}
+
+header,
+main,
+aside,
+footer,
+section,
+article,
+nav,
+summary,
+details {
+  border: 1px dashed red;
+  margin: 5px;
+  padding: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: darkblue;
+}
+
+a:link,
+a:visited {
+  background-color: darkblue;
+  color: white;
+  margin: 2px 10px;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover,
+a:active {
+  background-color: deepskyblue;
+  color: darkblue;
+}
+
+ul {
+  list-style-type: none;
+  margin: auto;
+  padding: auto;
+}
