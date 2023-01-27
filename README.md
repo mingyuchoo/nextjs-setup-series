@@ -12,13 +12,13 @@ npm install -g pnpm
 
 ## How to create a project
 
-```sh
+```bash
 pnpm create next-app --typescript  <project-name>
 ```
 
 ## How to run
 
-```sh
+```bash
 pnpm lint
 pnpm dev
 ```
