@@ -8,9 +8,7 @@ type ListItemProps<T extends User> = {
 
 const ListItem = <T extends User>({ item }: ListItemProps<T>) => (
   <Link href="/users/[id]" as={`/users/${item.id}`}>
-    <a>
-      {item.id}: {item.name}
-    </a>
+    {item.id}: {item.name}
   </Link>
 );
 

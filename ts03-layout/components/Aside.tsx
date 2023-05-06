@@ -4,9 +4,7 @@ const Aside = () => {
   return (
     <aside>
       <input placeholder="Search..." />
-      <Link href="/">
-        <a>Index</a>
-      </Link>
+      <Link href="/">Index</Link>
     </aside>
   );
 };

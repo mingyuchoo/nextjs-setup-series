@@ -17,9 +17,7 @@ const UserId = ({ item, errors }: Props) => {
         <p>
           <span style={{ color: 'red' }}>Error:</span> {errors}
         </p>
-        <Link href="/users">
-          <a>Go List</a>
-        </Link>
+        <Link href="/users">Go List</Link>
       </Layout>
     );
   }
@@ -27,9 +25,7 @@ const UserId = ({ item, errors }: Props) => {
   return (
     <Layout title={`${item ? item.name : 'User Detail'} | Next.js + TypeScript`}>
       {item && <ListDetail item={item} />}
-      <Link href="/users">
-        <a>Go List</a>
-      </Link>
+      <Link href="/users">Go List</Link>
     </Layout>
   );
 };
