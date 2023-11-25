@@ -4,15 +4,12 @@
   <a href="https://github.com/mingyuchoo/nextjs-setup-series/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/mingyuchoo/nextjs-setup-series?color=appveyor" /></a>
 </p>
 
-# nextjs-setup-series
-
+# README
 ## How to install `pnpm` package manager
 
 ```bash
 curl -fsSL https://get.pnpm.io/install.sh | sh -
-
 # or
-
 npm install -g pnpm
 ```
 

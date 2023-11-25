@@ -1,5 +1,4 @@
-# ts04-style
-
+# README
 ## Next.js Data Fetching
 
 1. CSR - Client-side data fetching(or rendering)
